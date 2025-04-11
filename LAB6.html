@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1454</title>
+    <style>
+        /* Q1: First letter capitalize */
+        p::first-letter {
+            text-transform: capitalize;
+        }
+
+        /* Q2: Calculator styles */
+        table.calc {
+            background-color: #9ED2E7;
+            padding: 8px;
+            border-spacing: 4px;
+            margin-top: 20px;
+        }
+
+        table.calc td {
+            border: 2px solid #9ED2E7;
+            background-color: #FDFFFA;
+            width: 60px;
+            height: 30px;
+            text-align: center;
+            border-radius: 5px;
+            border-bottom: 3px solid #7BA8BD;
+        }
+
+        #entry_box {
+            background-color: #7BA8BD;
+            border-top: 3px solid #5B8194;
+        }
+
+        .operator {
+            background-color: #FFEDF4;
+        }
+
+        #C {
+            background-color: #FFA0AB;
+            border-bottom: 3px solid #FC7986;
+        }
+
+        #equal {
+            background-color: #F2FF93;
+            border-bottom: 3px solid #9DA653;
+        }
+
+        #C:hover, #equal:hover, table.calc td:hover {
+            background-color: #9E88F7;
+            border-bottom: 3px solid #6952D1;
+            color: white;
+        }
+
+        #entry_box:hover {
+            background-color: #7BA8BD;
+            border-top: 3px solid #5B8194;
+            border-bottom: 3px solid #7BA8BD;
+        }
+
+        /* Q3: Image + hover text */
+        img {
+            border: 2px solid red;
+            border-radius: 100px;
+            height: 150px;
+            width: 150px;
+            display: block;
+            margin-top: 20px;
+        }
+
+        h4:hover {
+            color: rgb(100%,50%,100%);
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        hr {
+            margin: 40px 0;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Web Programming Lab - Exercise 6</h2>
+    <h3>23BCE1454 - Anushka Rai</h3>
+
+    <hr>
+
+    <h3>Q1: Data Science Promotion Table</h3>
+    <table style="border: 3px solid orange;">
+        <tr style="background-color: orange; font-size:large; color: white; text-align: left;">
+            <th>LEARN DATA SCIENCE!</th>
+        </tr>
+        <tr>
+            <td>
+                <ul style="margin-top: 1px;">
+                    <li style="color: grey;">
+                        <p style="color: blue; margin: 2px; font-size: 20px;">unlimited jobs</p>
+                    </li>
+                    <li style="color: grey;">
+                        <p style="color: blue; margin: 2px; font-size: 20px;">best benefits anywhere</p>
+                    </li>
+                    <li style="color: grey;">
+                        <p style="color: blue; margin: 2px; font-size: 20px;">call now for an appointment</p>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h3>Q2: Calculator</h3>
+    <table class="calc">
+        <tr>
+            <td id="C">C</td>
+            <td id="entry_box" colspan="3"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td class="operator">+</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td class="operator">-</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td class="operator">÷</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>.</td>
+            <td id="equal">=</td>
+            <td class="operator">x</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h3>Q3: Image Hover Effect</h3>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMDEaj9DhVIuO3a0lT0f4Jsh-DgX4JeRzvvw&s" alt="Arijit Singh">
+    <h4>&nbsp;&nbsp;&nbsp;&nbsp;Fig. 1. Arijit Singh</h4>
+
+</body>
+</html>
