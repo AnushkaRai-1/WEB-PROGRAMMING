@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>23BCE1454</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f0f4f8;
+    }
+
+    section {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+
+    h2, h1 {
+      color: #2c3e50;
+    }
+
+    button {
+      margin: 5px 5px 10px 0;
+      padding: 8px 12px;
+      border: none;
+      background-color: #3498db;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    pre {
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+
+    .input-field {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <h2>Hospital Patient Data</h2>
+    <button onclick="sortByAgeDesc()">Sort by Age (Descending)</button>
+    <button onclick="checkPatientById()">Check Patient by P-Id</button>
+    <button onclick="filterByAgeRange()">Filter by Age Range</button>
+    <pre id="output"></pre>
+  </section>
+
+  <section>
+    <h2 id="main-title">Original Title</h2>
+
+    <input type="text" name="username" class="input-field"><br>
+
+    <label><input type="radio" name="gender" value="Male"> Male</label>
+    <label><input type="radio" name="gender" value="Female"> Female</label><br>
+
+    <p>This is paragraph 1</p>
+    <p class="info">Info Paragraph 1</p>
+    <p class="info">Info Paragraph 2</p>
+    <p>This is paragraph 2</p>
+
+    <ul>
+      <li>List Item 1</li>
+      <li>List Item 2</li>
+      <li>List Item 3</li>
+    </ul>
+
+    <input type="text" class="input-field"><br>
+
+    <input type="checkbox" class="hobby" value="Reading"> Reading
+    <input type="checkbox" class="hobby" value="Gaming"> Gaming
+    <input type="checkbox" class="hobby" value="Traveling"> Traveling
+  </section>
+
+  <script>
+    const patients = [
+      { pid: 1, name: "Alen", age: 39 },
+      { pid: 2, name: "Deena", age: 47 },
+      { pid: 3, name: "Diana", age: 21 },
+      { pid: 4, name: "Jack", age: 54 },
+      { pid: 5, name: "Jain", age: 23 },
+      { pid: 6, name: "Kelvin", age: 61 },
+      { pid: 7, name: "Louis", age: 69 },
+      { pid: 8, name: "Rex", age: 49 }
+    ];
+
+    function display(data, title = "Result") {
+      const output = document.getElementById("output");
+      output.textContent = `--- ${title} ---\n` + JSON.stringify(data, null, 2);
+    }
+
+    function sortByAgeDesc() {
+      const sorted = [...patients].sort((a, b) => b.age - a.age);
+      display(sorted, "Sorted by Age Descending");
+    }
+
+    function checkPatientById() {
+      const pid = parseInt(prompt("Enter Patient ID (P-Id) to search:"));
+      const found = patients.find(p => p.pid === pid);
+      if (found) {
+        display(found, `Patient with P-Id ${pid} Found`);
+      } else {
+        display({}, `Patient with P-Id ${pid} Not Found`);
+      }
+    }
+
+    function filterByAgeRange() {
+      const min = parseInt(prompt("Enter minimum age:"));
+      const max = parseInt(prompt("Enter maximum age:"));
+      const filtered = patients.filter(p => p.age >= min && p.age <= max);
+      display(filtered, `Patients Aged ${min} to ${max}`);
+    }
+
+    document.getElementById("main-title").textContent = "Updated Title";
+
+    document.getElementsByName("username")[0].value = "John Doe";
+
+    const genderRadios = document.getElementsByName("gender");
+    for (let radio of genderRadios) {
+      if (radio.checked) {
+        console.log("Selected gender:", radio.value);
+      }
+    }
+
+    const pTags = document.getElementsByTagName("p");
+    console.log("Total <p> elements:", pTags.length);
+
+    const liItems = document.getElementsByTagName("li");
+    for (let item of liItems) {
+      console.log("LI:", item.textContent);
+    }
+
+    const inputs = document.getElementsByClassName("input-field");
+    for (let input of inputs) {
+      input.style.backgroundColor = "lightblue";
+    }
+
+    document.querySelector("p.info").textContent = "This is the first info paragraph";
+    document.querySelector("input[name='gender']").checked = true;
+
+    const infoParagraphs = document.querySelectorAll("p.info");
+    infoParagraphs.forEach(p => {
+      console.log("Info paragraph:", p.textContent);
+    });
+
+    const hobbies = document.querySelectorAll(".hobby");
+    hobbies.forEach(checkbox => {
+      checkbox.checked = true;
+      console.log("Checked hobby:", checkbox.value);
+    });
+  </script>
+
+</body>
+</html>

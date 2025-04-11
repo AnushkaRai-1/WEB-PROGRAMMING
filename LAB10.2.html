@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>23BCE1454-Grocery Order Form</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-color: #cbd5b4;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    form {
+      background: #a3ac92;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    .input-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    input[type="text"], input[type="email"], input[type="number"] {
+      padding: 5px;
+      width: 100%;
+    }
+    .product {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .product img {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #a8743d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <form id="orderForm">
+    <h2>Grocery Order Form</h2>
+
+    <div class="input-row">
+      <input type="text" id="name" placeholder="Customer Name" required>
+      <input type="text" id="phone" placeholder="Phone Number" required>
+    </div>
+    <input type="email" id="email" placeholder="Email" required><br><br>
+
+    <h3>Products</h3>
+
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtkzZMTh_n9DE3CznuCnA8wVdQI7IQT9sDng&s" alt="Apple">
+      <label><input type="checkbox" class="item" data-name="Apple" data-price="10"> Apple ($10)</label>
+      <input type="number" class="qty" min="1" max="100">
+    </div>
+
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCt7whm-AsDCJOU0M5zcrCo9JcITCg30yzkA&s" alt="Banana">
+      <label><input type="checkbox" class="item" data-name="Banana" data-price="5"> Banana ($5)</label>
+      <input type="number" class="qty" min="1" max="100">
+    </div>
+
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiiSgkLCU0MibnrdEY6hWrV1qlPkaSwKLNIQ&s" alt="Avocado">
+      <label><input type="checkbox" class="item" data-name="Avocado" data-price="7"> Avocado ($7)</label>
+      <input type="number" class="qty" min="1" max="100">
+    </div>
+
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+
+      const items = document.querySelectorAll(".item");
+      const quantities = document.querySelectorAll(".qty");
+
+      let order = {
+        name,
+        phone,
+        email,
+        products: []
+      };
+
+      items.forEach((item, i) => {
+        if (item.checked && quantities[i].value) {
+          order.products.push({
+            name: item.dataset.name,
+            price: item.dataset.price,
+            quantity: quantities[i].value
+          });
+        }
+      });
+
+      localStorage.setItem("orderData", JSON.stringify(order));
+      window.location.href = "LAB10.3.html";
+    });
+  </script>
+</body>
+</html>
