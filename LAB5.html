@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Professional Resume</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    header, footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 1em;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      padding: 0.5em;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    nav {
+      background: #ddd;
+      padding: 1em;
+      width: 15%;
+      box-sizing: border-box;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .main-content-scrollable {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1em;
+      box-sizing: border-box;
+    }
+
+    aside {
+      background: #f7f7f7;
+      padding: 1em;
+      width: 20%;
+      box-sizing: border-box;
+    }
+
+    .quick-facts-box {
+      background-color: #eee;
+      padding: 1em;
+      max-height: 300px;
+      overflow-y: auto;
+      border-radius: 8px;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    }
+
+    figure {
+      text-align: center;
+    }
+
+    progress, meter {
+      width: 100%;
+    }
+
+    /* Scrollbar styling */
+    .quick-facts-box::-webkit-scrollbar,
+    .main-content-scrollable::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .quick-facts-box::-webkit-scrollbar-track,
+    .main-content-scrollable::-webkit-scrollbar-track {
+      background: #ddd;
+      border-radius: 10px;
+    }
+
+    .quick-facts-box::-webkit-scrollbar-thumb,
+    .main-content-scrollable::-webkit-scrollbar-thumb {
+      background-color: #999;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Professional Resume</h1>
+  </header>
+
+  <div class="container">
+    <nav>
+      <p><a href="#about">About Me</a></p>
+      <p><a href="#education">Education</a></p>
+      <p><a href="#experience">Experience</a></p>
+      <p><a href="#skills">Skills</a></p>
+      <p><a href="#media">Media</a></p>
+    </nav>
+
+    <div class="content">
+      <div class="main-content-scrollable">
+        <main>
+          <section id="about">
+            <h2>Anushka Rai</h2>
+            <p>Software Engineer | Problem Solver | Innovator</p>
+            <article>
+              <h3>About Me</h3>
+              <p>A motivated software engineer with 5+ years of experience in building scalable web applications.</p>
+              <figure>
+                <img src="https://discoverymood.com/wp-content/uploads/2020/04/Mental-Strong-Women-min.jpg" alt="Anushka Rai" width="100">
+                <figcaption>Anushka Rai – Software Engineer</figcaption>
+              </figure>
+            </article>
+          </section>
+
+          <section id="education">
+            <h3>Education</h3>
+            <article>
+              <p><strong>B.Tech in Computer Science</strong><br>2023–2027</p>
+            </article>
+          </section>
+
+          <section id="experience">
+            <h3>Experience</h3>
+            <article>
+              <ul>
+                <li>Software Engineer at ABC Corp</li>
+                <li>Developed and maintained scalable systems</li>
+                <li>Worked with cross-functional teams using Agile</li>
+              </ul>
+            </article>
+          </section>
+
+          <section id="skills">
+            <h3>Skills</h3>
+            <label>HTML5</label>
+            <progress value="90" max="100"></progress>
+            <label>CSS3</label>
+            <progress value="85" max="100"></progress>
+            <label>JavaScript</label>
+            <meter value="80" min="0" max="100"></meter>
+          </section>
+
+          <section id="media">
+            <details>
+              <summary>More Info</summary>
+              <p>Hobbies: Chess, Reading</p>
+              <p>Goals: Becoming a full-stack architect</p>
+            </details>
+          </section>
+        </main>
+      </div>
+
+      <aside>
+        <h3>Quick Facts</h3>
+        <div class="quick-facts-box">
+          <ul>
+            <li>Proficient in HTML5, CSS3, and JavaScript</li>
+            <li>5+ years of professional experience</li>
+            <li>Certified Scrum Master</li>
+            <li>Published 3 technical articles</li>
+            <li>Worked on enterprise web applications</li>
+            <li>Led a team of 5 developers</li>
+            <li>Mentored junior engineers</li>
+            <li>Experience with REST APIs</li>
+            <li>Open source contributor</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Anushka Rai. All rights reserved. Contact:
+    <a href="mailto:anushkarai@example.com" style="color:lightblue;">anushkarai@example.com</a>
+  </footer>
+</body>
+</html>
