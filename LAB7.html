@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23BCE1454-Anushka Rai</title>
+    <style>
+
+        div.q1-container {
+            margin: 25px;
+            padding: 20px;
+            background-color: rgb(255, 255, 0);
+            width: 400px;
+            height: 100px;
+            box-sizing: content-box;
+        }
+
+        div.q1-container p {
+            padding: 20px;
+            border: 6px solid green;
+            background-color: #0000FF;
+            color: white;
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        #p1 {
+            color: blue;
+        }
+
+        #p2 {
+            color: aquamarine;
+        }
+
+        #p3 {
+            color: greenyellow;
+        }
+
+        .background {
+            width: 80%;
+            text-align: center;
+            background-image: url('https://images.ctfassets.net/sfnkq8lmu5d7/4Ma58uke8SXDQLWYefWiIt/3f1945422ea07ea6520c7aae39180101/2021-11-24_Singleton_Puppy_Syndrome_One_Puppy_Litter.jpg?w=1000&h=750&fl=progressive&q=70&fm=jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+        }
+
+        .rainbow {
+            font-size: 3rem;
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .description {
+            column-count: 3;
+            column-gap: 20px;
+            line-height: 30pt;
+            text-align: justify;
+            margin: 20px auto;
+            font-size: 1.2rem;
+        }
+
+        .play-scene {
+            margin-top: 20px;
+        }
+
+        .ball {
+            animation: moveBall 3s infinite ease-in-out;
+            transform-origin: center;
+        }
+
+        @keyframes moveBall {
+            0% {
+                transform: translate(0px, 0px) rotate(0deg) skew(0deg, 0deg);
+            }
+            25% {
+                transform: translate(50px, -30px) rotate(45deg) skew(10deg, 10deg);
+            }
+            50% {
+                transform: translate(100px, 0px) rotate(90deg) skew(0deg, -10deg);
+            }
+            75% {
+                transform: translate(50px, 30px) rotate(135deg) skew(-10deg, 10deg);
+            }
+            100% {
+                transform: translate(0px, 0px) rotate(180deg) skew(0deg, 0deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="q1-container">
+        <p>College life at VIT is vibrant and full of opportunities.<br>
+        The campus is well-equipped with modern facilities.<br>
+        Every day brings new learning experiences.</p>
+    </div>
+
+    <div class="background">
+        <h1 class="rainbow">Welcome to the Pet Animals Page</h1>
+        <div class="description">
+            <p id="p1">Dogs are loyal companions and are often referred to as "man's best friend."</p>
+            <p id="p2">Cats are independent, curious, and playful animals that make great pets.</p>
+            <p id="p3">Rabbits are gentle, quiet, and enjoy a relaxed environment with their owners.</p>
+        </div>
+        <svg class="play-scene" width="400" height="200">
+            <circle class="ball" cx="200" cy="150" r="15" fill="red" />
+        </svg>
+    </div>
+
+</body>
+</html>
