@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>23BCE1454 - ANUSHKA RAI</title>
+  <style>
+    .title {
+      font-weight: bold;
+      margin-top: 30px;
+    }
+
+    #nameBox {
+      border: 2px solid black;
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      width: 120px;
+      margin: 10px auto;
+    }
+
+    #ticketBox {
+      margin-top: 20px;
+      border: 2px solid gray;
+      padding: 10px;
+      width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">1. Basic Calculator</div>
+  <button onclick="basicCalculator()">Run Calculator</button>
+
+  <div class="title">2. Age and Driving Eligibility</div>
+  <button onclick="checkDriving()">Check Driving Eligibility</button>
+
+  <div class="title">3. Confirm Student Status</div>
+  <button onclick="confirmStudent()">Confirm Student</button>
+
+  <div class="title">4. Labour and Total Charge Calculator</div>
+  <button onclick="calculateServiceCost()">Calculate Charges</button>
+
+  <div class="title">5. Registration Number and Name Display</div>
+  <button onclick="displayRegName()">Display Reg No & Name</button>
+  <div id="nameBox"></div>
+
+  <div class="title">6. Circus Ticket Booth</div>
+  <div id="ticketBox">
+    <label>Adults (₹10 each): <input type="number" id="adults" value="0"></label><br><br>
+    <label>Children (₹5 each): <input type="number" id="children" value="0"></label><br><br>
+    <button onclick="calculateTicketTotal()">Total</button><br><br>
+    Total Amount: ₹<input type="text" id="totalAmount" readonly>
+  </div>
+
+  <script>
+    function basicCalculator() {
+      let a = parseFloat(prompt("Enter first number:"));
+      let b = parseFloat(prompt("Enter second number:"));
+      let op = prompt("Enter operation (+, -, *, /, %):");
+
+      let result;
+      switch (op) {
+        case "+": result = a + b; break;
+        case "-": result = a - b; break;
+        case "*": result = a * b; break;
+        case "/": result = b !== 0 ? a / b : "Error: Divide by zero"; break;
+        case "%": result = a % b; break;
+        default: result = "Invalid operation";
+      }
+
+      alert("Result: " + result);
+    }
+
+    function checkDriving() {
+      let age = prompt("Enter your age:");
+      if (age >= 18) {
+        alert("You are eligible to drive.");
+      } else {
+        alert("You are NOT eligible to drive.");
+      }
+    }
+
+    function confirmStudent() {
+      let isStudent = confirm("Are you a student?");
+      if (isStudent) {
+        alert("Student access granted.");
+      } else {
+        alert("Student access denied.");
+      }
+    }
+
+    function calculateServiceCost() {
+      const rate = 45;
+      let hours = parseFloat(prompt("Enter number of hours worked:"));
+      let material = parseFloat(prompt("Enter cost of materials:"));
+      let labourCost = rate * hours;
+      let totalCost = labourCost + material;
+
+      alert("Labour Cost: ₹" + labourCost + "\nTotal Charge: ₹" + totalCost);
+    }
+
+    function calculateTicketTotal() {
+      let adults = parseInt(document.getElementById("adults").value) || 0;
+      let children = parseInt(document.getElementById("children").value) || 0;
+      let total = (adults * 10) + (children * 5);
+
+      document.getElementById("totalAmount").value = total;
+    }
+
+    function displayRegName() {
+      let reg = prompt("Enter your registration number:");
+      let name = prompt("Enter your name:");
+
+      // Open new window to use document.write safely
+      let regWindow = window.open("", "_blank", "width=300,height=200");
+      regWindow.document.write(
+        "<div style='border: 5px solid #b22222; width: 100px; text-align: center; font-weight: bold; margin: 50px auto;'>"
+        + reg + "</div>"
+      );
+
+      // Display name in current window using innerHTML
+      document.getElementById("nameBox").innerHTML = "<em>" + name + "</em>";
+    }
+  </script>
+
+</body>
+</html>
